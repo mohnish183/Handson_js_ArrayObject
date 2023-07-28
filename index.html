@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Array Object</h1>
+      <div class="Q">
+        <span>Question</span>
+        <div class="one">
+          <pre>
+let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+            {name: 'Baba', id: 101, marks : 23 },
+            {name: 'yaga', id: 200, marks : 45 },
+            {name: 'Wick', id: 115, marks : 75 } ] 
+            </pre
+          >
+        </div>
+      </div>
+      <div class="Q">
+        <span>Q1</span>
+        <div class="two">
+          <pre>
+"We are interested in retrieving only the students' names; all the names should be in caps.
+
+            ['JOHN', 'BABA', 'YAGA', 'WICK']"</pre
+          >
+        </div>
+      </div>
+      <div class="Q">
+        <span>Q2</span>
+        <div class="three">
+          <pre>
+"Suppose we have the same dataset as above but this time we want to get the details of students who scored 
+ more than 50 marks.
+
+            [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]"</pre
+          >
+        </div>
+      </div>
+      <div class="Q">
+        <span>Q3</span>
+        <div class="four">
+          <pre>
+Retrieve the details of students who scored more than 50 marks and have IDs greater than 120.</pre
+          >
+        </div>
+      </div>
+      <div class="Q">
+        <span>Q4</span>
+        <div class="nine">
+          <pre>
+Consider the same scenario we have discussed above, but this time we would like to know the sum total
+of the marks of the students.</pre
+          >
+        </div>
+      </div>
+      <div class="Q">
+        <span>Q5</span>
+        <div class="five">
+          <pre>
+This time we want to get only the names of the students who scored more than 50 marks from the same dataset 
+used above.</pre
+          >
+        </div>
+      </div>
+      <div class="Q">
+        <span>Q6</span>
+        <div class="six">
+          <pre>
+This time we want to get only the names of the students who scored more than 50 marks from the same dataset
+used above.</pre
+          >
+        </div>
+      </div>
+      <div class="Q">
+        <span>Q7</span>
+        <div class="seven">
+          <pre>
+This time we are required to print the total marks of the students with marks greater than 50 after a grace 
+of 15 marks has been added to those students who scored less than 50.</pre
+          >
+        </div>
+      </div>
+      <div class="Q">
+        <span>Q8</span>
+        <div class="eight">
+          <pre>
+Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an 
+array of objects. </pre
+          >
+        </div>
+      </div>
+      <div class="answer">
+        <pre>
+let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+          {name: 'Baba', id: 101, marks : 23 },
+          {name: 'yaga', id: 200, marks : 45 },
+          {name: 'Wick', id: 115, marks : 75 } ] 
+          
+          //ans1
+
+          let ans1=studentRecords.map((item)=>item.name.toUpperCase())
+          console.log(ans1)
+          
+          //ans2
+          
+          let ans2=studentRecords.filter((item)=>item.marks>50)
+          console.log(ans2)
+          
+          //ans3
+          
+          let ans3=studentRecords.filter((item)=>item.marks>50&&item.id>120)
+          console.log(ans3)
+          
+          //ans4
+          
+          let ans4=0
+          studentRecords.map((item)=>ans4+=item.marks)
+          console.log(ans4)
+          
+          //ans5
+          
+          let ans5=ans2.map((item)=>item.name.toUpperCase())
+          console.log(ans5)
+          
+          //ans6
+          
+          let ans6=0
+          studentRecords.filter((item)=>item.id>120).map((item)=>ans6+=item.marks)
+          console.log(ans6)
+          
+          //ans7
+          
+          let ans7=0
+          let studentsupdated=studentRecords.map((item)=>{
+              if(item.marks<50)
+              item.marks+=15
+              return item
+          }).map((item)=>item.marks>50? ans7+=item.marks:null)
+          console.log(ans7)
+          
+          //ans8
+
+          let classRecords = [ {name: 'John', Class:'cs' ,roll: 123 },
+            {name: 'Baba', Class:'cs' ,roll: 101  },
+            {name: 'yaga', Class:'cs' ,roll: 200},
+            {name: 'Wick',Class:'cs' roll: 115 }
+            {name: 'Jack',Class:'Me' roll: 120 }
+            {name: 'Mike',Class:'Ee' roll: 130 }] 
+
+            
+          </pre
+        >
+      </div>
+    </div>
+  </body>
+</html>
